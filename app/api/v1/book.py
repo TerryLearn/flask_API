@@ -1,7 +1,15 @@
 
 from flask import Blueprint
 
-book = Blueprint('book', __name__)
-@book.route('/v1/book/get')
-def get_user():
+from app.libs.redprints import Redprint
+
+api = Redprint('book')
+
+@api.route('/get')
+def get_book():
     return 'get book'
+
+
+@api.route('/create')
+def create_book():
+    return "create book"
